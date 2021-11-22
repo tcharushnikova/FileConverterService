@@ -1,3 +1,4 @@
+import Converter.ConvertFromJsonToXml;
 import Converter.ConvertFromXmlToJson;
 
 import java.io.IOException;
@@ -9,6 +10,10 @@ public class Main {
         else {
             if (args[0].endsWith(".xml") && args[1].endsWith(".json")) {
                 ConvertFromXmlToJson converter = new ConvertFromXmlToJson();
+                converter.convert(args[0], args[1]);
+            }
+            else if (args[0].endsWith(".json") && args[1].endsWith(".xml")) {
+                ConvertFromJsonToXml converter = new ConvertFromJsonToXml();
                 converter.convert(args[0], args[1]);
             }
             else
